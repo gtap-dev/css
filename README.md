@@ -16,9 +16,9 @@ Based on Harry Roberts' [CSS Guidelines](https://github.com/csswizardry/CSS-Guid
 
   There are a variety of techniques we must employ in order to satisfy these goals, and CSS Guidelines is a document of recommendations and approaches that will help us to do so.
 
-## The Importance of Styleguide
+## The Importance of Style Guide
 
-  A coding styleguide (note, not a visual styleguide) is a valuable tool for teams who
+  A coding style guide (note, not a visual style guide) is a valuable tool for teams who
 
   * build and maintain products for a reasonable length of time;
   * have developers of differing abilities and specialisms;
@@ -26,9 +26,9 @@ Based on Harry Roberts' [CSS Guidelines](https://github.com/csswizardry/CSS-Guid
   * on-board new staff regularly;
   * have a number of codebases that developers dip in and out of.
 
-  Whilst styleguides are typically more suited to product teams—large codebases on long-lived and evolving projects, with multiple developers contributing over prolonged periods of time—all developers should strive for a degree of standardisation in their code.
+  Whilst style guides are typically more suited to product teams—large codebases on long-lived and evolving projects, with multiple developers contributing over prolonged periods of time—all developers should strive for a degree of standardisation in their code.
 
-  A good styleguide, when well followed, will
+  A good style guide, when well followed, will
 
   * set the standard for code quality across a codebase;
   * promote consistency across codebases;
@@ -55,7 +55,7 @@ Based on Harry Roberts' [CSS Guidelines](https://github.com/csswizardry/CSS-Guid
 
 ## Syntax and Formatting
 
-  One of the simplest forms of a styleguide is a set of rules regarding syntax and formatting. Having a standard way of writing (literally writing) CSS means that code will always look and feel familiar to all members of the team.
+  One of the simplest forms of a style guide is a set of rules regarding syntax and formatting. Having a standard way of writing (literally writing) CSS means that code will always look and feel familiar to all members of the team.
 
   Further, code that looks clean feels clean. It is a much nicer environment to work in, and prompts other team members to maintain the standard of cleanliness that they found. Ugly code sets a bad precedent.
 
@@ -983,6 +983,89 @@ a.card {
   Here we are selecting based on an attribute rather than an ID, and attribute selectors have the same specificity as a class. This allows us to style based on an ID, but without introducing its specificity.
 
   Do keep in mind that these are hacks, and should not be used unless you have no better alternative.
+
+
+## Sass
+
+When using [Sass](https://sass-lang.com/) preprocessor, take the following principles into account when using Sass functionality.
+
+### Variables
+
+Use variables to share same values across components and rulesets.
+
+#### Global Variables
+
+When defining global variables, keep in mind that they are global and there may be a lot of them. As such, prefix their names with scopes so they don't conflict.
+
+Good:
+```scss
+$color-text: #000000;
+$elevation-01: 0 1px 2px rgba(0, 0, 0, .1);
+```
+
+Bad:
+```scss
+$color: #000000;
+$shadow: 0 1px 2px rgba(0, 0, 0, .1);
+```
+
+#### Local Variables
+
+Prefix local component-specific variables with the component name. This ensures that global and local variables don't override each other
+
+Good:
+```scss
+$btn-background: $color-primary;
+
+.btn {
+  background: $btn-background;
+}
+```
+
+Bad - `$background` is a generic variable that may be used elsewhere as well:
+```scss
+$background: $color-primary;
+
+.btn {
+  background: $background;
+}
+```
+
+### Mixins and Functions
+
+Use mixins to share same rulesets across components. As with variables, mixins can also be both global and local, so keep that in mind when naming them.
+
+```scss
+// global mixin
+@mixin bp($breakpoint) { }
+
+// local mixin
+@mixin btn-style($color) { }
+```
+
+Use functions to share calculation logic to get computed values in style declarations.
+
+### Nesting Selectors
+
+When nesting selectors, do not "split" class names. This is for better searchability in projects - when looking for when/where some class is defined/used, it is simpler to look for the complete class.
+
+Bad:
+```scss
+.btn {
+
+    &--primary {}
+    &__inner {}
+}
+```
+
+Good:
+```scss
+.btn {}
+
+.btn--primary {}
+
+.btn__inner {}
+```
 
 ## Architectural Principles
 
