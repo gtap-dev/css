@@ -1,4 +1,4 @@
-# gotoAndPlay CSS Style Guide
+# gotoAndPlay CSS Guideline
 
 Based on Harry Roberts' [CSS Guidelines](https://github.com/csswizardry/CSS-Guidelines).
 
@@ -16,9 +16,9 @@ Based on Harry Roberts' [CSS Guidelines](https://github.com/csswizardry/CSS-Guid
 
   There are a variety of techniques we must employ in order to satisfy these goals, and CSS Guidelines is a document of recommendations and approaches that will help us to do so.
 
-## The Importance of Style Guide
+## The Importance of a Guideline
 
-  A coding style guide (note, not a visual style guide) is a valuable tool for teams who
+  A coding guideline (note, not a visual style guide) is a valuable tool for teams who
 
   * build and maintain products for a reasonable length of time;
   * have developers of differing abilities and specialisms;
@@ -26,9 +26,9 @@ Based on Harry Roberts' [CSS Guidelines](https://github.com/csswizardry/CSS-Guid
   * on-board new staff regularly;
   * have a number of codebases that developers dip in and out of.
 
-  Whilst style guides are typically more suited to product teams—large codebases on long-lived and evolving projects, with multiple developers contributing over prolonged periods of time—all developers should strive for a degree of standardisation in their code.
+  Whilst coding guidelines are typically more suited to product teams—large codebases on long-lived and evolving projects, with multiple developers contributing over prolonged periods of time—all developers should strive for a degree of standardisation in their code.
 
-  A good style guide, when well followed, will
+  A good coding guideline, when well followed, will
 
   * set the standard for code quality across a codebase;
   * promote consistency across codebases;
@@ -55,7 +55,7 @@ Based on Harry Roberts' [CSS Guidelines](https://github.com/csswizardry/CSS-Guid
 
 ## Syntax and Formatting
 
-  One of the simplest forms of a style guide is a set of rules regarding syntax and formatting. Having a standard way of writing (literally writing) CSS means that code will always look and feel familiar to all members of the team.
+  One of the simplest forms of a guideline is a set of rules regarding syntax and formatting. Having a standard way of writing (literally writing) CSS means that code will always look and feel familiar to all members of the team.
 
   Further, code that looks clean feels clean. It is a much nicer environment to work in, and prompts other team members to maintain the standard of cleanliness that they found. Ugly code sets a bad precedent.
 
