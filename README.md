@@ -81,10 +81,10 @@ We encourage splitting each components' styles to a separate file.
 
 ```css
 /**
-* I am a long-form comment. I describe, in detail, the CSS that follows. I am
-* such a long comment that I easily break the 80 character limit, so I am
-* broken across several lines.
-*/
+ * I am a long-form comment. I describe, in detail, the CSS that follows. I am
+ * such a long comment that I easily break the 80 character limit, so I am
+ * broken across several lines.
+ */
 ```
 
 This rule should be applied only to comments, exempting all CSS declarations.
@@ -286,16 +286,16 @@ If your comment spans multiple lines, use DocBlock-esque multi-line comments. In
 // single-line-comment
 
 /**
-  * Multi-line comment
-  *
-  * 1) Regular page-head with no backgrounds or extra treatments; it just
-  *    contains the logo and nav.
-  * 2) A masthead that has a fluid-height (becoming fixed after a certain point)
-  *    which has a large background image, and some supporting text.
-  *
-  * The regular page-head is incredibly simple, but the masthead version has some
-  * slightly intermingled dependency with the wrapper that lives inside it.
-  */
+ * Multi-line comment
+ *
+ * 1) Regular page-head with no backgrounds or extra treatments; it just
+ *    contains the logo and nav.
+ * 2) A masthead that has a fluid-height (becoming fixed after a certain point)
+ *    which has a large background image, and some supporting text.
+ *
+ * The regular page-head is incredibly simple, but the masthead version has some
+ * slightly intermingled dependency with the wrapper that lives inside it.
+ */
 ```
 
 This level of detail should be the norm for all non-trivial code—descriptions of states, permutations, conditions, and treatments.
@@ -669,29 +669,29 @@ Name things for people; they’re the only things that actually read your classe
 
 ```css
 /**
-  * Runs the risk of becoming out of date; not very maintainable.
-  */
+ * Runs the risk of becoming out of date; not very maintainable.
+ */
 .blue {
   color: blue;
 }
 
 /**
-  * Depends on location in order to be rendered properly.
-  */
+ * Depends on location in order to be rendered properly.
+ */
 .header span {
   color: blue;
 }
 
 /**
-  * Too specific; limits our ability to reuse.
-  */
+ * Too specific; limits our ability to reuse.
+ */
 .header-color {
   color: blue;
 }
 
 /**
-  * Nicely abstracted, very portable, doesn’t risk becoming out of date.
-  */
+ * Nicely abstracted, very portable, doesn’t risk becoming out of date.
+ */
 .highlight-color {
   color: blue;
 }
@@ -729,8 +729,8 @@ Not only does this exhibit poor <a><b>Selector Intent</b></a>—I didn’t actua
 #content table { }
 
 /**
-  * Uh oh! My styles get overwritten by `#content table {}`.
-  */
+ * Uh oh! My styles get overwritten by `#content table {}`.
+ */
 .my-new-table { }
 ```
 
@@ -810,23 +810,23 @@ We’re actually talking about descendant or child selectors; selectors which re
 
 ```scss
 /**
-  * An element with a class of `.bar` anywhere inside an element with a class of
-  * `.foo`.
-  */
+ * An element with a class of `.bar` anywhere inside an element with a class of
+ * `.foo`.
+ */
 .foo .bar { }
 
 
 /**
-  * An element with a class of `.module-title` directly inside an element with a
-  * class of `.module`.
-  */
+ * An element with a class of `.module-title` directly inside an element with a
+ * class of `.module`.
+ */
 .module > .module-title { }
 
 
 /**
-  * Any `li` element anywhere inside a `ul` element anywhere inside a `nav`
-  * element
-  */
+ * Any `li` element anywhere inside a `ul` element anywhere inside a `nav`
+ * element
+ */
 nav ul li { }
 ```
 
@@ -1101,9 +1101,9 @@ Skin is a layer that we (optionally) add to our structure in order to give objec
 
 ```css
 /**
-  * A simple, design-free alert object. Extend this object with a `.alert--*` skin
-  * class.
-  */
+ * A simple, design-free alert object. Extend this object with a `.alert--*` skin
+ * class.
+ */
 .alert {
     display: flex;
     align-items: flex-start;
@@ -1111,15 +1111,15 @@ Skin is a layer that we (optionally) add to our structure in order to give objec
 }
 
 /**
-  * Success alerts skin. Extends `.alert`.
-  */
+ * Success alerts skin. Extends `.alert`.
+ */
 .alert--success {
     background-color: green;
 }
 
 /**
-  * Error alerts' skin. Extends `.alert`.
-  */
+ * Error alerts' skin. Extends `.alert`.
+ */
 .alert--error {
     background-color: red;
 }
@@ -1180,8 +1180,8 @@ Here we can see that—despite being named after one very specific use-case—th
 }
 
 /*
-  * Theme variations
-  */
+ * Theme variations
+ */
 .message--color-error {
   background-color: #fee;
   color: #f00;
@@ -1193,8 +1193,8 @@ Here we can see that—despite being named after one very specific use-case—th
 }
 
 /*
-  * Alignment variations
-  */
+ * Alignment variations
+ */
 .message--align-center {
     text-align: center;
 }
