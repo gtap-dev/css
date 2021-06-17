@@ -499,7 +499,7 @@ Quick example:
 }
 
 .modal__content {
-    .modal.is-loading { }
+    .modal.is-loading & { }
 }
 ```
 
