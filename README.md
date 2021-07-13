@@ -154,9 +154,17 @@ Problems here include
     display: block;
     visibility: visible;
 
-    // media queries
+    // media queries, from smaller to larger
     @include bp(sm-min) {
         color: #000000;
+    }
+
+    @include bp(md-min) {
+        color: #cccccc;
+    }
+
+    @include bp(lg-min) {
+        color: #ffffff;
     }
 
     // pseudo selector
