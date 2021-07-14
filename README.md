@@ -395,9 +395,18 @@ Elements are delimited with two (2) underscores (__), and Modifiers are delimite
 
 Here we can see that <a>.person {}</a> is the Block; it is the sole root of a discrete entity. <a>.person__head {}</a> is an Element; it is a smaller part of the <a>.person {}</a> Block. Finally, <a>.person--tall {}</a> is a Modifier; it is a specific variant of the <a>.person {}</a> Block.
 
-Note that using a Modifier class without a Block class is invalid, e.g the following example is incorrect:
+Note that a Modifier class should always be used alongside a Block class:
+
+```html
+<div class="block block--modifier">...</div>
+```
+
+Using a Modifier class without a Block class is invalid, e.g the following are incorrect:
+
 ```html
 <div class="block--modifier">...</div>
+
+<div class="page block--modifier">...</div>
 ```
 
 ## Starting Context
@@ -497,7 +506,7 @@ The way in which States are different to BEM’s Modifiers is that States are te
 - Format: `.[is|has]-state`
 - States are temporary. As such, they are more specific than regular Modifier classes to override possible Modifier styles.
 - Ensure that States work without changing HTML.
-- Never write a bare State class.
+- Use state classes together with Block or Element classes
 
 Quick example:
 
